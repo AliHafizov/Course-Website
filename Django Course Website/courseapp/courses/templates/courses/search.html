@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block page_title %}
+Kurslar
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
+{% endblock %}
+
+{% block js_files %}
+<script src="{% static 'courses/js/script.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-3">
+        <div class="row">
+          <div class="col-3">
+           
+            {% include 'courses/partials/_categories.html' %}
+          
+          </div>
+          <div class="col-9">
+            {% if courses|length == 0 %}
+            <div class="alert alert-warning" >Kurs Tapilmadi.</div>
+            {% endif %}
+            
+            {% for course in courses %}
+            <!--{% if course.isActive %}-->
+            
+            {% include 'courses/partials/_course.html' %}
+            <!--{% endif %}-->
+            
+            {% endfor %}
+
+            {% comment %} {% include 'courses/partials/_pagination.html' %} {% endcomment %}
+
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
+{% endblock %}
+
+{% block js_files %}
+<script src="{% static 'courses/js/script.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="container mt-3">
+        <div class="row">
+          <div class="col-12">
+           <p>Senediniz Yuklendi.</p>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}
